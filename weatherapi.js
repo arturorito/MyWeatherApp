@@ -6,10 +6,15 @@ $("button").on("click", function() {
 
     // queryURL is the url we'll use to query the API
     var apikey = "&appid=27fa69b94fe4ce92a6e8393728f74817";
+    var apikey5 = "&appid=dfdf94c00f064f5842902b0d4e4da549";
+
     var cityname = $("#citysearch").val().trim();
 
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityname + apikey;
-    console.log(cityname)
+    var queryURL5 ="http://api.openweathermap.org/data/2.5/forecast/daily?q=" + cityname + "&cnt=5" +apikey5;
+
+
+console.log(cityname)
 
     $.ajax({
         url: queryURL,
@@ -29,10 +34,6 @@ $("button").on("click", function() {
         console.log(iconcode);
         console.log(iconurl);
         
-
-  
-
-
         $('#wicon').attr('src', iconurl);
         $(".allweather").empty();
         $("#cityname").append(results.name);
@@ -42,7 +43,16 @@ $("button").on("click", function() {
         $("#wind").append("Wind Speed " + results.wind.speed + " MPH");
         $("#uv").append();
 
-        });
+        })
+
+    $.ajax({
+        url: queryURL5,
+        method: "GET"
     })
 
-  
+    .then(function(response5) {
+        console.log(queryURL5);
+
+        console.log(response5);
+    })
+});
