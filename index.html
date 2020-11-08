@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Weather Dashboard</title> 
+  <!-- Bootstrap CSS CDN  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+
+  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+  <!-- Style to fix the issue of text extending past card length -->
+  <style>
+    .card-body a {
+      word-break: break-all;
+    }
+
+    .articleHeadline {
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+    
+    <!--Container for the entire page; used a fixed navbar so it always stays on. Container fluid so that it can maintain across the top-->
+    <div class="container-fluid"> 
+      <!--Nav Bar/Banner/Header @ the top-->
+      <nav class="row navbar sticky-top navbar-light bg-dark justify-content-center" style=color:ghostwhite >
+          <h1>
+              <strong>
+                  My Weather Dashboard <i class="fa fa-cloud" aria-hidden="true"></i>
+              </strong>
+          </h1>
+      </nav>
+        <!--makes the entire section after the nav bar,left and right part of the page-->
+        <div class="row justify-content-md-center">
+          <!--Left aside for recent searches and for search bar-->
+          <div class="col col-sm-3" style= background-color:lightblue>
+            <!--this break separated the nav from the search input-->
+            <br>
+            <div class="row" >
+              <div class="col col-sm-9">
+                <h5>Search for a city:</h5>
+                <div class="input-group md-form form-sm form-2 pl-0">
+                <input class="form-control" type="text" id=citysearch>
+                  <button type="button" class="btn btn-primary">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!--makes cards of recent cities searched-->
+            <br>
+            <div class="row">
+            <br>
+              <div class="col">
+                <div class="card" style="width: 18rem;">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">This section needs code</li>
+                    <li class="list-group-item">That works with the Jquery</li>
+                    <li class="list-group-item">Some equations that save the information after a search</li>
+                  </ul>
+                </div>            
+              </div>
+            </div>
+          </div>
+          <!--Right side of the main section, focusing on current situation and future weather there-->
+          <div class="col col-sm-9">
+            <br>
+                <div class="row">
+                  <div class="col">
+                  <div class="card" >
+                    <div class="card-header text-center"  >
+                      <h2><div id="cityname" class="allweather"></h2>
+                      <img id="wicon" src="">
+                    
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Current Weather</h5>
+                      <p class="card-text">
+                    <div id="temp" class="allweather"></div>
+                    <br>
+                    <div id="hum" class="allweather"></div>
+                    <br>
+                    <div id="wind" class="allweather"></div>
+                    <br>
+                    <div id="uv" class="allweather"></div>
+                      </p>
+                    </div>
+                    <h4><div class="card-footer text-muted text-center allweather" id="citydate">
+                    </div></h4>
+                  </div>
+                   </div> 
+                </div>
+                <div class="row">
+                  <div class="col">
+                  <br>
+                    <h2>5-Day Forecast:</h2>
+                  </div>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col col-sm-2">
+                        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <p class="card-text">
+                                  Weather: DATA
+                                <br>
+                                  Temperature: D
+                                <br>
+                                  Humidity: %
+                                <br>
+                            </div>
+                        </div>                    
+                    </div>
+                    <div class="col col-sm-2">
+                        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <p class="card-text">
+                                  Weather: DATA
+                                <br>
+                                  Temperature: D
+                                <br>
+                                  Humidity: %
+                                <br>
+                            </div>
+                        </div>                    
+                    </div> 
+                    <div class="col col-sm-2">
+                        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <p class="card-text">
+                                  Weather: DATA
+                                <br>
+                                  Temperature: D
+                                <br>
+                                  Humidity: %
+                                <br>
+                            </div>
+                        </div>                    
+                    </div> 
+                    <div class="col col-sm-2">
+                        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <p class="card-text">
+                                  Weather: DATA
+                                <br>
+                                  Temperature: D
+                                <br>
+                                  Humidity: %
+                                <br>
+                            </div>
+                        </div>                    
+                    </div> 
+                    <div class="col col-sm-2">
+                        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Date</h5>
+                                <p class="card-text">
+                                  Weather: DATA
+                                <br>
+                                  Temperature: D
+                                <br>
+                                  Humidity: %
+                                <br>
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+  <!-- jQuery JS -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+  <script src="weatherapi.js"></script>
+
+  
+</body>
+
+</html>
